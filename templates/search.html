@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>Wyszukiwanie Książek</title>
+</head>
+<body>
+    <h2>Formularz wyszukiwania</h2>
+    <form method="get" action="{% url 'search_books' %}">
+        {{ search_form.as_p }}
+        {{ additional_search_form.as_p }}
+        <button type="submit">Szukaj</button>
+    </form>
+</body>
+</html>

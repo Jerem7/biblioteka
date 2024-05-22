@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>Wyniki wyszukiwania Książek</title>
+</head>
+<body>
+    <h2>Wyniki wyszukiwania</h2>
+    {% if results %}
+        <ul>
+            {% for book in results %}
+                <li>{{ book.tytul|safe }} napisane przez {{ book.id_autor.imie_autor|safe }} {{ book.id_autor.nazwisko_autor|safe }}, {{ book.id_autor.kraj_pochodzenia|safe }}. Wydawnictwo: {{ book.id_wydawnictwa.nazwa|safe }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Brak wyników wyszukiwania.</p>
+    {% endif %}
+</body>
+</html>
